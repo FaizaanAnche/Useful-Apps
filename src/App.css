@@ -1,38 +1,89 @@
-.App {
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1{
   text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.useful-app{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 2rem auto;
+  width: 50%;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 10px gray;
+  background-color:darkgray;
 }
 
-.App-link {
-  color: #61dafb;
+/* ------------------TO DO LIST STYLES------------------- */
+
+#task-input{
+  width: 70%;
+  padding: 0.5rem;
+  border: 2px solid rgb(164, 164, 164);
+  border-radius: 5px;
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#add-task-button{
+  width: 30%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid azure;
+  background-color: aqua !important;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+#add-task-button:hover{
+  border-color: hotpink;
+  transition: 0.3s ease;
+}
+
+#task-list{
+  list-style: none;
+  width: 70%;
+}
+
+#task-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.4rem 0;
+  background-color: white;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+#task-options button{
+  padding: 5px;
+  height: 38px;
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+/* ------------------DIGITAL CLOCK STYLES------------------- */
+.clock{
+  width: 70%;
+  background-color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
