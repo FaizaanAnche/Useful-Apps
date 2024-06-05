@@ -26,6 +26,11 @@ const Navbar = () => {
               Stopwatch
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/color-picker" activeClassname="active">
+              Color Picker
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
