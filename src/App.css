@@ -1,64 +1,104 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: monospace;
 }
 
-:root{
-  --cream:#FDFFE2;
-  --cream-active:#dbddbf;
-  --light-blue:#83B4FF;
-  --light-blue-active:#5c84c2;
-  --grayish-blue:#5A72A0;
-  --dark-blue:#1A2130;
+:root {
+  --cream: #fdffe2;
+  --cream-active: #dbddbf;
+  --light-blue: #83b4ff;
+  --light-blue-active: #5c84c2;
+  --grayish-blue: #5a72a0;
+  --dark-blue: #1a2130;
+  --dark-blue-hover: #2a3b5f;
 }
 
-h1{
+h1 {
   text-align: center;
   font-size: 3rem;
 }
 
-h2{
+h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.App{
+.App {
   background-color: var(--cream);
+  height: 100vh;
   padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.useful-app{
+.useful-app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin: 4rem auto;
   width: 50%;
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0px 0px 16px var(--grayish-blue);
-  background-color:var(--light-blue);
+  background-color: var(--light-blue);
   color: var(--dark-blue);
   font-weight: 700;
   font-size: 1.2rem;
 }
+/* ------------------NAVBAR STYLES------------------- */
 
+nav {
+  background-color: var(--dark-blue);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px auto;
+  font-weight: 700;
+  width: 50%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: var(--dark-blue-hover);
+  border-radius: 5px;
+}
+
+nav ul li a.active {
+  background-color: var(--dark-blue-hover);
+  border-radius: 5px;
+  font-weight: bold;
+}
 /* ------------------TO DO LIST STYLES------------------- */
 
-#task-input{
+#task-input {
   width: 70%;
   padding: 1rem;
   border: 2px solid rgb(164, 164, 164);
   border-radius: 10px;
 }
 
-#add-task-button , .stopwatch-controls button{
+#add-task-button,
+.stopwatch-controls button {
   width: 30%;
   padding: 0.5rem;
   border: 2px solid var(--grayish-blue);
@@ -69,22 +109,24 @@ h2{
   margin: 1rem 0;
 }
 
-#add-task-button:hover , .stopwatch-controls button:hover{ 
+#add-task-button:hover,
+.stopwatch-controls button:hover {
   background-color: var(--cream);
   color: var(--dark-blue);
   transition: 0.2s ease;
 }
 
-#add-task-button:active, .stopwatch-controls button:active{
+#add-task-button:active,
+.stopwatch-controls button:active {
   background-color: var(--cream-active);
 }
 
-#task-list{
+#task-list {
   list-style: none;
   width: 70%;
 }
 
-#task-list li{
+#task-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +138,7 @@ h2{
   border-radius: 10px;
 }
 
-#task-options button{
+#task-options button {
   padding: 0px 10px;
   height: 38px;
   font-size: 1.2rem;
@@ -106,16 +148,17 @@ h2{
   background-color: var(--light-blue);
 }
 
-#task-options button:hover{
+#task-options button:hover {
   border: 1px solid var(--dark-blue);
 }
 
-#task-options button:active{
+#task-options button:active {
   background-color: var(--light-blue-active);
 }
 
 /* ------------------DIGITAL CLOCK STYLES------------------- */
-.clock, .stopwatch{
+.clock,
+.stopwatch {
   width: 70%;
   background-color: var(--cream);
   text-align: center;
@@ -127,10 +170,9 @@ h2{
 
 /* ------------------STOP WATCH STYLES------------------- */
 
-.stopwatch-controls{
+.stopwatch-controls {
   margin-top: 20px;
   display: flex;
   width: 70%;
   justify-content: space-around;
 }
-
