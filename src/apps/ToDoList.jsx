@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const ToDoList = () => {
 
-    let [tasks, setTasks] = useState(["task 1","task 2","task 3","task 4"]);
+    let [tasks, setTasks] = useState([]);
     let [newTask, setNewTask] = useState("");
 
     const handleInputChange = (e) => {
@@ -11,7 +11,7 @@ const ToDoList = () => {
 
     const handleAddTask = () => {
         if(newTask.trim() !== ""){
-            setTasks(prevTasks => [...prevTasks,newTask]);
+            setTasks(prevTasks => [...prevTasks,newTask.toUpperCase()]);
         }
         setNewTask("");
     }

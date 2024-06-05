@@ -2,12 +2,21 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: monospace;
+}
+
+:root{
+  --cream:#FDFFE2;
+  --cream-active:#dbddbf;
+  --light-blue:#83B4FF;
+  --light-blue-active:#5c84c2;
+  --grayish-blue:#5A72A0;
+  --dark-blue:#1A2130;
 }
 
 h1{
   text-align: center;
   font-size: 3rem;
-  margin-top: 2rem;
 }
 
 h2{
@@ -15,42 +24,59 @@ h2{
   margin-bottom: 20px;
 }
 
+.App{
+  background-color: var(--cream);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .useful-app{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 2rem;
   width: 50%;
   padding: 2rem;
   border-radius: 2rem;
-  box-shadow: 5px 5px 10px gray;
-  background-color:darkgray;
+  box-shadow: 0px 0px 16px var(--grayish-blue);
+  background-color:var(--light-blue);
+  color: var(--dark-blue);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* ------------------TO DO LIST STYLES------------------- */
 
 #task-input{
   width: 70%;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 2px solid rgb(164, 164, 164);
-  border-radius: 5px;
-  font-size: 1.2rem;
+  border-radius: 10px;
 }
 
-#add-task-button{
+#add-task-button , .stopwatch-controls button{
   width: 30%;
   padding: 0.5rem;
-  font-size: 1rem;
-  border: 2px solid azure;
-  background-color: aqua !important;
+  border: 2px solid var(--grayish-blue);
+  background-color: var(--dark-blue);
+  color: var(--cream);
   border-radius: 10px;
+  font-weight: 700;
   margin: 1rem 0;
 }
 
-#add-task-button:hover{
-  border-color: hotpink;
-  transition: 0.3s ease;
+#add-task-button:hover , .stopwatch-controls button:hover{ 
+  background-color: var(--cream);
+  color: var(--dark-blue);
+  transition: 0.2s ease;
+}
+
+#add-task-button:active, .stopwatch-controls button:active{
+  background-color: var(--cream-active);
 }
 
 #task-list{
@@ -63,7 +89,7 @@ h2{
   justify-content: space-between;
   align-items: center;
   margin: 0.4rem 0;
-  background-color: white;
+  background-color: var(--cream);
   width: 100%;
   padding: 1rem;
   font-size: 1.2rem;
@@ -71,19 +97,40 @@ h2{
 }
 
 #task-options button{
-  padding: 5px;
+  padding: 0px 10px;
   height: 38px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0 10px;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  background-color: var(--light-blue);
+}
+
+#task-options button:hover{
+  border: 1px solid var(--dark-blue);
+}
+
+#task-options button:active{
+  background-color: var(--light-blue-active);
 }
 
 /* ------------------DIGITAL CLOCK STYLES------------------- */
-.clock{
+.clock, .stopwatch{
   width: 70%;
-  background-color: white;
+  background-color: var(--cream);
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   padding: 0.5rem;
   border-radius: 10px;
 }
+
+/* ------------------STOP WATCH STYLES------------------- */
+
+.stopwatch-controls{
+  margin-top: 20px;
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+}
+
