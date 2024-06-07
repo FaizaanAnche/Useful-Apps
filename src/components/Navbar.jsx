@@ -7,11 +7,6 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" activeClassname="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/todo" activeClassname="active">
               To Do App
             </NavLink>

@@ -1,71 +1,36 @@
-import { useState } from "react";
+import { useTaskStore } from "./store";
 
 const ToDoList = () => {
+  const { tasks, newTask, setNewTask, addTask, removeTask, moveUp, moveDown } =
+    useTaskStore();
 
-    let [tasks, setTasks] = useState([]);
-    let [newTask, setNewTask] = useState("");
-
-    const handleInputChange = (e) => {
-        setNewTask(e.target.value);
-    }
-
-    const handleAddTask = () => {
-        if(newTask.trim() !== ""){
-            setTasks(prevTasks => [...prevTasks,newTask.toUpperCase()]);
-        }
-        setNewTask("");
-    }
-
-    const handleDeleteTask = (index) => {
-        setTasks(prevTasks => prevTasks.filter((_,i) => i!==index));
-    }
-
-    const handleMoveUp = (index) => {
-        
-        if(index>0){
-            console.log("Move up");
-            let updatedTasks = [...tasks];
-            [updatedTasks[index],updatedTasks[index-1]] = 
-            [updatedTasks[index-1],updatedTasks[index]]
-            setTasks(updatedTasks);
-        }
-    }
-
-    const handleMoveDown = (index) => {
-        
-        if(index < tasks.length-1){
-            console.log("Move Down");
-            let updatedTasks = [...tasks];
-            [updatedTasks[index+1],updatedTasks[index]] = 
-            [updatedTasks[index],updatedTasks[index+1]]
-            setTasks(updatedTasks);
-        }
-    }
-
-    return(
-        <div className="useful-app">
-            <h2>TO DO LIST</h2>
-            <input 
-                type="text" 
-                placeholder="Enter a task..." 
-                value={newTask}
-                onChange={handleInputChange}
-                id="task-input"
-            />
-            <button onClick={()=>handleAddTask()} id="add-task-button">Add Task</button>
-            <ol id="task-list">
-                {tasks.map((task,index) => 
-                    <li key={index}>{task}
-                    <div id="task-options">
-                    <button onClick={()=>handleDeleteTask(index)}>❌</button>
-                    <button onClick={()=>handleMoveUp(index)}>⬆</button>
-                    <button onClick={()=>handleMoveDown(index)}>⬇</button>
-                    </div> 
-                    </li>
-                )}
-            </ol>
-        </div>
-    );
+  return (
+    <div className="useful-app">
+      <h2>TO DO LIST</h2>
+      <input
+        type="text"
+        placeholder="Enter a task..."
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        id="task-input"
+      />
+      <button onClick={() => addTask()} id="add-task-button">
+        Add Task
+      </button>
+      <ol id="task-list">
+        {tasks.map((task, index) => (
+          <li key={index}>
+            {task}
+            <div id="task-options">
+              <button onClick={() => removeTask(index)}>❌</button>
+              <button onClick={() => moveUp(index)}>⬆</button>
+              <button onClick={() => moveDown(index)}>⬇</button>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 };
 
 export default ToDoList;

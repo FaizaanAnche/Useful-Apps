@@ -3,7 +3,6 @@ import "./App.css";
 import DigitalClock from "./apps/DigitalClock";
 import Stopwatch from "./apps/Stopwatch";
 import ToDoList from "./apps/ToDoList";
-import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
 import ColorPicker from "./apps/ColorPicker";
 
@@ -12,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<h2>CHOOSE AN APP</h2>}></Route>
         <Route path="/todo" element={<ToDoList />} />
         <Route path="/digital-clock" element={<DigitalClock />} />
         <Route path="/stopwatch" element={<Stopwatch />} />

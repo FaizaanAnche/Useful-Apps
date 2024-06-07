@@ -27,7 +27,6 @@ h2 {
 }
 
 .App {
-  background-color: var(--cream);
   height: 100vh;
   padding: 2rem 0;
   display: flex;
