@@ -45,3 +45,13 @@ export const useTaskStore = create((set) => ({
       return state;
     }),
 }));
+
+export const useTimeStore = create((set) => ({
+  isRunning: false,
+  elapsedTime: 0,
+
+  start: () => set(() => ({ isRunning: true })),
+  stop: () => set(() => ({ isRunning: false })),
+  reset: () => set(() => ({ isRunning: false, elapsedTime: 0 })),
+  setElapsedTime: (time) => set(() => ({ elapsedTime: time })),
+}));
