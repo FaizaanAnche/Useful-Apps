@@ -17,7 +17,7 @@ const Stopwatch = () => {
     return () => {
       clearInterval(intervalIdRef.current);
     };
-  }, [isRunning]);
+  }, [isRunning, setElapsedTime]);
 
   const startClock = () => {
     start();
